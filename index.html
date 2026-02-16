@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acquisition Labs — Client Acquisition for Commercial Contractors</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1D3A;
+    --dark: #070F1C;
+    --darker: #050B15;
+    --blue: #4F8EFF;
+    --blue-glow: rgba(79, 142, 255, 0.15);
+    --blue-subtle: rgba(79, 142, 255, 0.08);
+    --light: #E2EAFF;
+    --pale: #94A3C4;
+    --white: #F7F9FC;
+    --card: rgba(15, 30, 56, 0.6);
+    --card-border: rgba(79, 142, 255, 0.12);
+    --green: #34D399;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--darker);
+    color: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999;
+  }
+
+  /* ═══ NAV ═══ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(5, 11, 21, 0.88);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+  .nav-logo svg { width: 30px; height: 30px; }
+  .nav-logo span { font-size: 1.05rem; font-weight: 600; color: var(--white); letter-spacing: -0.02em; }
+  .nav-logo span em { font-style: normal; font-weight: 300; color: var(--blue); }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a {
+    font-size: 0.85rem; color: var(--pale); text-decoration: none;
+    font-weight: 400; transition: color 0.2s; letter-spacing: 0.01em;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    padding: 0.55rem 1.3rem; background: var(--blue); color: var(--dark);
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.82rem;
+    border: none; border-radius: 6px; cursor: pointer; text-decoration: none; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: #6BA3FF; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(79, 142, 255, 0.3); }
+
+  /* ═══ HERO ═══ */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; text-align: center;
+    padding: 8rem 2rem 4rem; position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -15%; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(79, 142, 255, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 0.82rem; font-weight: 500; color: var(--pale);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem;
+    animation: fadeInUp 0.7s ease both;
+  }
+  .hero-eyebrow span { color: var(--blue); }
+  .hero h1 {
+    font-size: clamp(2.5rem, 5.5vw, 4.4rem); font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.035em; max-width: 820px;
+    margin-bottom: 1.4rem; animation: fadeInUp 0.7s ease 0.08s both;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--blue), #7CB8FF);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.12rem; font-weight: 300; color: var(--pale);
+    max-width: 540px; line-height: 1.65; margin-bottom: 2.5rem;
+    animation: fadeInUp 0.7s ease 0.16s both;
+  }
+  .hero-cta-group {
+    display: flex; gap: 1rem; align-items: center;
+    animation: fadeInUp 0.7s ease 0.24s both;
+  }
+  .btn-primary {
+    padding: 0.85rem 1.8rem; background: var(--blue); color: var(--dark);
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem;
+    border: none; border-radius: 8px; cursor: pointer; text-decoration: none;
+    transition: all 0.25s; display: inline-block;
+  }
+  .btn-primary:hover { background: #6BA3FF; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79, 142, 255, 0.35); }
+  .btn-ghost {
+    padding: 0.85rem 1.8rem; background: transparent; color: var(--pale);
+    font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.95rem;
+    border: 1px solid rgba(148, 163, 196, 0.2); border-radius: 8px;
+    cursor: pointer; text-decoration: none; transition: all 0.25s;
+  }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ═══ TRUST BAR ═══ */
+  .trust-bar {
+    display: flex; justify-content: center; gap: 3rem;
+    padding: 2.5rem 2rem; border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    max-width: 900px; margin: 0 auto;
+  }
+  .trust-item { text-align: center; }
+  .trust-item .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 1.5rem;
+    font-weight: 500; color: var(--blue); display: block; margin-bottom: 0.3rem;
+  }
+  .trust-item .label { font-size: 0.78rem; color: var(--pale); font-weight: 400; letter-spacing: 0.03em; }
+
+  /* ═══ SECTIONS ═══ */
+  .section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 600; color: var(--blue);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.7rem;
+  }
+  .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 700;
+    letter-spacing: -0.025em; margin-bottom: 0.8rem; line-height: 1.15;
+  }
+  .section-sub {
+    font-size: 1rem; color: var(--pale); font-weight: 300;
+    max-width: 580px; line-height: 1.65; margin-bottom: 2.8rem;
+  }
+
+  /* ═══ WHAT WE DO ═══ */
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .service {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 1.8rem; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .service:hover { border-color: rgba(79, 142, 255, 0.25); transform: translateY(-2px); }
+  .service:hover::before { opacity: 1; }
+  .service-icon {
+    width: 40px; height: 40px; background: var(--blue-subtle);
+    border: 1px solid var(--card-border); border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; font-size: 1.1rem;
+  }
+  .service h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .service p { font-size: 0.85rem; color: var(--pale); line-height: 1.6; font-weight: 300; }
+
+  /* ═══ FEATURED REPORT BANNER ═══ */
+  .featured-section { padding: 2rem 2rem 5rem; }
+  .featured-banner {
+    max-width: 1100px; margin: 0 auto;
+    background: linear-gradient(135deg, rgba(79, 142, 255, 0.08), rgba(52, 211, 153, 0.04));
+    border: 1px solid rgba(79, 142, 255, 0.18);
+    border-radius: 16px; padding: 3rem; position: relative; overflow: hidden;
+  }
+  .featured-banner::before {
+    content: ''; position: absolute; top: -40%; right: -10%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(79, 142, 255, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .featured-badge {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.4rem 1rem; background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.2); border-radius: 100px;
+    font-size: 0.72rem; font-weight: 600; color: var(--green);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .featured-badge::before {
+    content: ''; width: 5px; height: 5px; background: var(--green);
+    border-radius: 50%; animation: pulse 2s infinite;
+  }
+  .featured-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; }
+  .featured-content h2 {
+    font-size: 1.65rem; font-weight: 700; letter-spacing: -0.02em;
+    margin-bottom: 0.8rem; line-height: 1.2;
+  }
+  .featured-content p {
+    font-size: 0.92rem; color: var(--pale); line-height: 1.7;
+    margin-bottom: 1.5rem; font-weight: 300;
+  }
+  .featured-perks { display: flex; flex-direction: column; gap: 0.8rem; }
+  .perk {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.8rem 1rem; background: rgba(11, 29, 58, 0.5);
+    border: 1px solid var(--card-border); border-radius: 10px;
+  }
+  .perk-icon {
+    width: 32px; height: 32px; min-width: 32px;
+    background: var(--blue-subtle); border: 1px solid var(--card-border);
+    border-radius: 8px; display: flex; align-items: center;
+    justify-content: center; font-size: 0.9rem;
+  }
+  .perk-text { flex: 1; }
+  .perk-text strong { font-size: 0.88rem; font-weight: 600; display: block; margin-bottom: 0.15rem; }
+  .perk-text span { font-size: 0.8rem; color: var(--pale); font-weight: 300; line-height: 1.4; }
+
+  /* ═══ HOW THE INTERVIEW WORKS ═══ */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; }
+  .steps::before {
+    content: ''; position: absolute; top: 28px; left: 15%; right: 15%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--card-border), var(--card-border), transparent);
+  }
+  .step { text-align: center; position: relative; }
+  .step-num {
+    width: 44px; height: 44px; background: var(--navy);
+    border: 2px solid var(--blue); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 0.9rem;
+    color: var(--blue); margin: 0 auto 1rem; position: relative; z-index: 1;
+  }
+  .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .step p { font-size: 0.83rem; color: var(--pale); line-height: 1.6; font-weight: 300; }
+
+  /* ═══ REPORT TOPICS ═══ */
+  .topics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .topic {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    padding: 1.1rem 1.2rem; background: var(--card);
+    border: 1px solid var(--card-border); border-radius: 10px;
+    transition: all 0.2s;
+  }
+  .topic:hover { border-color: rgba(79, 142, 255, 0.2); }
+  .topic-icon {
+    width: 26px; height: 26px; min-width: 26px;
+    background: var(--blue-subtle); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; margin-top: 1px;
+  }
+  .topic span { font-size: 0.88rem; color: var(--light); line-height: 1.45; font-weight: 400; }
+
+  /* ═══ CTA ═══ */
+  .cta-section { padding: 5rem 2rem; text-align: center; }
+  .cta-box {
+    max-width: 620px; margin: 0 auto; padding: 2.8rem;
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 16px; position: relative; overflow: hidden;
+  }
+  .cta-box::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+  }
+  .cta-box h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+  .cta-box p { font-size: 0.92rem; color: var(--pale); line-height: 1.6; margin-bottom: 1.8rem; font-weight: 300; }
+  .cta-details { display: flex; justify-content: center; gap: 1.8rem; margin-bottom: 1.8rem; flex-wrap: wrap; }
+  .cta-detail { display: flex; align-items: center; gap: 0.4rem; font-size: 0.82rem; color: var(--pale); }
+  .cta-detail svg { width: 15px; height: 15px; color: var(--blue); flex-shrink: 0; }
+
+  /* ═══ FOOTER ═══ */
+  footer {
+    padding: 2.5rem 2rem; text-align: center;
+    border-top: 1px solid var(--card-border);
+  }
+  footer p { font-size: 0.78rem; color: rgba(148, 163, 196, 0.4); font-weight: 300; }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 768px) {
+    nav { padding: 0.9rem 1.2rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-cta-group { flex-direction: column; width: 100%; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+    .section { padding: 3.5rem 1.5rem; }
+    .trust-bar { gap: 1.5rem; flex-wrap: wrap; }
+    .services { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+    .steps::before { display: none; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-banner { padding: 2rem 1.5rem; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .cta-details { flex-direction: column; gap: 0.7rem; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#111827"/><rect x="10" y="24" width="5" height="8" rx="1.5" fill="#4F8EFF" opacity="0.5"/><rect x="17.5" y="10" width="5" height="22" rx="1.5" fill="#4F8EFF"/><rect x="25" y="18" width="5" height="14" rx="1.5" fill="#4F8EFF" opacity="0.7"/></svg>
+    <span>Acquisition <em>Labs</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="#what-we-do">What We Do</a>
+    <a href="#report">2026 Report</a>
+    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="nav-cta">Get Featured</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow"><span>HVAC</span> · <span>Plumbing</span> · <span>Electrical</span></p>
+  <h1>We help contractors <span class="accent">systematically win new clients</span></h1>
+  <p class="hero-sub">Acquisition Labs builds data-driven outbound systems for commercial contractors who are done relying on referrals alone.</p>
+  <div class="hero-cta-group">
+    <a href="#report" class="btn-primary">Join the 2026 Report →</a>
+    <a href="#what-we-do" class="btn-ghost">How It Works</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="num">$1-3M</span>
+    <span class="label">Potential New Revenue / Year</span>
+  </div>
+  <div class="trust-item">
+    <span class="num">500+</span>
+    <span class="label">Prospects Reached / Month</span>
+  </div>
+  <div class="trust-item">
+    <span class="num">10-20</span>
+    <span class="label">Qualified Conversations / Month</span>
+  </div>
+</div>
+<p style="text-align:center; font-size:0.68rem; color:rgba(148,163,196,0.35); font-weight:300; padding:0.6rem 2rem 0; letter-spacing:0.02em;">*Based on industry benchmarks and projected client outcomes</p>
+
+<!-- WHAT WE DO -->
+<section class="section" id="what-we-do">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Your growth engine.<br>Built from real market data.</h2>
+  <p class="section-sub">Most contractors rely on referrals and hope. We replace hope with a system.</p>
+
+  <div class="services">
+    <div class="service">
+      <div class="service-icon">🔍</div>
+      <h3>Find the Right Prospects</h3>
+      <p>We identify property managers, facility directors, and commercial clients in your area who need your services — using data, not guesswork.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">📨</div>
+      <h3>Run Targeted Outreach</h3>
+      <p>Multi-channel campaigns that put your company in front of decision-makers. Personalized, professional, and consistent — so you're always in the conversation.</p>
+    </div>
+    <div class="service">
+      <div class="service-icon">📞</div>
+      <h3>Book Qualified Conversations</h3>
+      <p>We hand you prospects who are interested and ready to talk. Your team focuses on what they do best — closing and delivering great work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: 2026 REPORT -->
+<section class="featured-section" id="report">
+  <div class="featured-banner">
+    <div class="featured-badge">Now Accepting Interviews</div>
+    <div class="featured-grid">
+      <div class="featured-content">
+        <h2>2026 Contractor Growth Report — South Florida</h2>
+        <p>We're interviewing 20 commercial contractor owners to find out what's actually working for client acquisition in 2026. Real data from real operators — no theory.</p>
+        <p>Participate in a 30-minute Zoom interview and you'll receive edited video clips of your conversation plus early access to the full report with actionable benchmarks.</p>
+        <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary">Get Featured in the Report →</a>
+      </div>
+      <div class="featured-perks">
+        <div class="perk">
+          <div class="perk-icon">🎬</div>
+          <div class="perk-text">
+            <strong>Video Spotlight</strong>
+            <span>2-3 edited clips from your interview — ready for LinkedIn or your website. We handle everything.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">📊</div>
+          <div class="perk-text">
+            <strong>Actionable Benchmarks</strong>
+            <span>Early access to compiled data from all 20 interviews. See how you compare to your peers.</span>
+          </div>
+        </div>
+        <div class="perk">
+          <div class="perk-icon">🎯</div>
+          <div class="perk-text">
+            <strong>A Fresh Perspective</strong>
+            <span>30 minutes with someone who's studying how the best contractors grow. No pitch, just conversation.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW THE INTERVIEW WORKS -->
+<section class="section">
+  <div class="section-label">The Interview</div>
+  <h2 class="section-title">Simple. Respectful of your time.</h2>
+  <p class="section-sub">Three steps. No strings attached.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Book a 30-Min Zoom</h3>
+      <p>Pick a time that works. We send you a calendar invite with the link.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Share Your Story</h3>
+      <p>We ask a few questions about how you're growing your business. You talk, we listen and record.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Get Your Assets</h3>
+      <p>Within a week: your edited video clips plus early access to the full report with actionable benchmarks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THE REPORT COVERS -->
+<section class="section">
+  <div class="section-label">Inside the Report</div>
+  <h2 class="section-title">What we're uncovering.</h2>
+  <p class="section-sub">Straight from the people running the businesses.</p>
+  <div class="topics-grid">
+    <div class="topic">
+      <div class="topic-icon">📋</div>
+      <span>Where new commercial clients are actually coming from in 2026</span>
+    </div>
+    <div class="topic">
+      <div class="topic-icon">🔍</div>
+      <span>How referral-dependent the average contractor really is</span>
+    </div>
+    <div class="topic">
+      <div class="topic-icon">📈</div>
+      <span>What the fastest-growing contractors are doing differently</span>
+    </div>
+    <div class="topic">
+      <div class="topic-icon">💡</div>
+      <span>The biggest untapped acquisition channels most owners are ignoring</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="book">
+  <div class="cta-box">
+    <h2>Limited to 20 Interviews</h2>
+    <p>We're looking for owners and founders of commercial HVAC, plumbing, and electrical companies in South Florida. If that's you, we'd love to hear your story.</p>
+    <div class="cta-details">
+      <div class="cta-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        30 min Zoom
+      </div>
+      <div class="cta-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No sales pitch
+      </div>
+      <div class="cta-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Free video + report
+      </div>
+    </div>
+    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary">Book Your Interview Slot →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Acquisition Labs · acquisitionlabs.ai</p>
+</footer>
+
+</body>
+</html>
