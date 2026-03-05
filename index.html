@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acquisition Labs — Client Acquisition for Commercial Contractors</title>
+<title>Acquisition Labs — Trigger-Based Lead Generation for Commercial HVAC</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -275,6 +275,51 @@
   footer p { font-size: 0.78rem; color: rgba(148, 163, 196, 0.4); font-weight: 300; }
 
   /* ═══ RESPONSIVE ═══ */
+  /* ═══ STATS ROW ═══ */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .stat-item { text-align: center; }
+  .stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--pale);
+    margin-top: 0.3rem;
+  }
+  @media (max-width: 600px) {
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ═══ CARD GRID (Why Us) ═══ */
+  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 1.8rem; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .card:hover { border-color: rgba(79, 142, 255, 0.25); transform: translateY(-2px); }
+  .card:hover::before { opacity: 1; }
+  .card-icon {
+    width: 40px; height: 40px; background: var(--blue-subtle);
+    border: 1px solid var(--card-border); border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; color: var(--blue);
+  }
+  .card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .card p { font-size: 0.85rem; color: var(--pale); line-height: 1.6; font-weight: 300; }
+
   @media (max-width: 768px) {
     nav { padding: 0.9rem 1.2rem; }
     .nav-links a:not(.nav-cta) { display: none; }
@@ -290,6 +335,7 @@
     .featured-banner { padding: 2rem 1.5rem; }
     .topics-grid { grid-template-columns: 1fr; }
     .cta-details { flex-direction: column; gap: 0.7rem; align-items: center; }
+    .card-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -302,172 +348,136 @@
     <span>Acquisition <em>Labs</em></span>
   </a>
   <div class="nav-links">
-    <a href="#what-we-do">What We Do</a>
-    <a href="#report">2026 Report</a>
-    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="nav-cta">Get Featured</a>
+    <a href="#what-we-do">How It Works</a>
+    <a href="#why-us">Why Us</a>
+    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="nav-cta">Check Availability</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <p class="hero-eyebrow"><span>HVAC</span> · <span>Plumbing</span> · <span>Electrical</span></p>
-  <h1>We help contractors <span class="accent">systematically win new clients</span></h1>
-  <p class="hero-sub">Acquisition Labs builds data-driven outbound systems for commercial contractors who are done relying on referrals alone.</p>
+  <p class="hero-eyebrow"><span>Commercial HVAC</span></p>
+  <h1>We find the commercial buildings that need HVAC work — <span class="accent">before your competitors do.</span></h1>
+  <p class="hero-sub">We cross-reference building permits, property records, and system age data to identify high-value HVAC opportunities in your service area. Then we fill your pipeline — automatically.</p>
   <div class="hero-cta-group">
-    <a href="#report" class="btn-primary">Join the 2026 Report →</a>
-    <a href="#what-we-do" class="btn-ghost">How It Works</a>
+    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary">See Your Market Data →</a>
+    <a href="#what-we-do" class="btn-ghost">How It Works →</a>
   </div>
 </section>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-item">
-    <span class="num">$1-3M</span>
-    <span class="label">Potential New Revenue / Year</span>
+    <span class="num">19,706</span>
+    <span class="label">Commercial Properties Analyzed</span>
   </div>
   <div class="trust-item">
-    <span class="num">500+</span>
-    <span class="label">Prospects Reached / Month</span>
+    <span class="num">2,500+</span>
+    <span class="label">Leads Contacted / Month</span>
   </div>
   <div class="trust-item">
-    <span class="num">10-20</span>
-    <span class="label">Qualified Conversations / Month</span>
+    <span class="num">3-5</span>
+    <span class="label">Jobs Closed / Month</span>
   </div>
 </div>
-<p style="text-align:center; font-size:0.68rem; color:rgba(148,163,196,0.35); font-weight:300; padding:0.6rem 2rem 0; letter-spacing:0.02em;">*Based on industry benchmarks and projected client outcomes</p>
+<p style="text-align:center; font-size:0.68rem; color:rgba(148,163,196,0.35); font-weight:300; padding:0.6rem 2rem 0; letter-spacing:0.02em;">*Miami-Dade County. Expanding to Broward and Palm Beach.</p>
 
-<!-- WHAT WE DO -->
+<!-- HOW IT WORKS -->
 <section class="section" id="what-we-do">
-  <div class="section-label">What We Do</div>
-  <h2 class="section-title">Your growth engine.<br>Built from real market data.</h2>
-  <p class="section-sub">Most contractors rely on referrals and hope. We replace hope with a system.</p>
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title">From building intelligence to booked meetings.</h2>
+  <p class="section-sub">Three steps. No guesswork.</p>
 
   <div class="services">
     <div class="service">
       <div class="service-icon">🔍</div>
-      <h3>Find the Right Prospects</h3>
-      <p>We identify property managers, facility directors, and commercial clients in your area who need your services — using data, not guesswork.</p>
+      <h3>We Scan Your Territory</h3>
+      <p>Using county permit records and property appraiser data, we identify every commercial building in your service area that needs HVAC work — scored by building age, system history, and estimated deal size.</p>
     </div>
     <div class="service">
       <div class="service-icon">📨</div>
-      <h3>Run Targeted Outreach</h3>
-      <p>Multi-channel campaigns that put your company in front of decision-makers. Personalized, professional, and consistent — so you're always in the conversation.</p>
+      <h3>We Launch Targeted Outreach</h3>
+      <p>Personalized emails referencing each building's specific age, size, and condition. Direct mail to high-priority targets. Every message is backed by real property intelligence — not a generic cold blast.</p>
     </div>
     <div class="service">
       <div class="service-icon">📞</div>
-      <h3>Book Qualified Conversations</h3>
-      <p>We hand you prospects who are interested and ready to talk. Your team focuses on what they do best — closing and delivering great work.</p>
+      <h3>We Fill Your Pipeline</h3>
+      <p>Qualified property owners who want to talk land directly on your calendar. You focus on closing and delivering great work. We handle everything else.</p>
     </div>
   </div>
 </section>
 
-<!-- FEATURED: 2026 REPORT -->
-<section class="featured-section" id="report">
-  <div class="featured-banner">
-    <div class="featured-badge">Now Accepting Interviews</div>
-    <div class="featured-grid">
-      <div class="featured-content">
-        <h2>2026 Contractor Growth Report — South Florida</h2>
-        <p>We're interviewing 20 commercial contractor owners to find out what's actually working for client acquisition in 2026. Real data from real operators — no theory.</p>
-        <p>Participate in a 30-minute Zoom interview and you'll receive edited video clips of your conversation plus early access to the full report with actionable benchmarks.</p>
-        <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary">Get Featured in the Report →</a>
+<!-- WHY US -->
+<section class="section" id="why-us">
+  <div class="section-label">Why Acquisition Labs</div>
+  <h2 class="section-title">Built different from every other lead gen company.</h2>
+  <p class="section-sub">No generic cold calls. No recycled contact lists. No paying for nothing.</p>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
-      <div class="featured-perks">
-        <div class="perk">
-          <div class="perk-icon">🎬</div>
-          <div class="perk-text">
-            <strong>Video Spotlight</strong>
-            <span>2-3 edited clips from your interview — ready for LinkedIn or your website. We handle everything.</span>
-          </div>
-        </div>
-        <div class="perk">
-          <div class="perk-icon">📊</div>
-          <div class="perk-text">
-            <strong>Actionable Benchmarks</strong>
-            <span>Early access to compiled data from all 20 interviews. See how you compare to your peers.</span>
-          </div>
-        </div>
-        <div class="perk">
-          <div class="perk-icon">🎯</div>
-          <div class="perk-text">
-            <strong>A Fresh Perspective</strong>
-            <span>30 minutes with someone who's studying how the best contractors grow. No pitch, just conversation.</span>
-          </div>
-        </div>
+      <h3>Exclusive Territory</h3>
+      <p>One HVAC contractor per service area. Your leads never go to a competitor. When your zone is locked, it's yours.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
+      <h3>Pay for Performance</h3>
+      <p>One-time setup fee, then a percentage of jobs that close from our leads. If we don't generate revenue, you don't pay. No $5K/month retainers regardless of results.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <h3>Building-Level Intelligence</h3>
+      <p>We analyze 262,000+ HVAC permits and 19,700 commercial properties to find buildings that actually need work — with owner info and deal size estimates for every one.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3>Fully Automated Outreach</h3>
+      <p>Email sequences, direct mail, and phone scripts — personalized for each property and deployed on your behalf. Your brand, your name, our system.</p>
     </div>
   </div>
 </section>
 
-<!-- HOW THE INTERVIEW WORKS -->
+<!-- YOUR MARKET -->
 <section class="section">
-  <div class="section-label">The Interview</div>
-  <h2 class="section-title">Simple. Respectful of your time.</h2>
-  <p class="section-sub">Three steps. No strings attached.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Book a 30-Min Zoom</h3>
-      <p>Pick a time that works. We send you a calendar invite with the link.</p>
+  <div class="section-label">Your Market</div>
+  <h2 class="section-title">What we see in Miami-Dade.</h2>
+  <p class="section-sub">Every number comes from real county permit and property appraiser records.</p>
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-number">19,706</div>
+      <div class="stat-label">Commercial Properties</div>
     </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Share Your Story</h3>
-      <p>We ask a few questions about how you're growing your business. You talk, we listen and record.</p>
+    <div class="stat-item">
+      <div class="stat-number">18,945</div>
+      <div class="stat-label">No HVAC Upgrade on Record</div>
     </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Get Your Assets</h3>
-      <p>Within a week: your edited video clips plus early access to the full report with actionable benchmarks.</p>
+    <div class="stat-item">
+      <div class="stat-number">627</div>
+      <div class="stat-label">Expired HVAC Permits</div>
     </div>
-  </div>
-</section>
-
-<!-- WHAT THE REPORT COVERS -->
-<section class="section">
-  <div class="section-label">Inside the Report</div>
-  <h2 class="section-title">What we're uncovering.</h2>
-  <p class="section-sub">Straight from the people running the businesses.</p>
-  <div class="topics-grid">
-    <div class="topic">
-      <div class="topic-icon">📋</div>
-      <span>Where new commercial clients are actually coming from in 2026</span>
-    </div>
-    <div class="topic">
-      <div class="topic-icon">🔍</div>
-      <span>How referral-dependent the average contractor really is</span>
-    </div>
-    <div class="topic">
-      <div class="topic-icon">📈</div>
-      <span>What the fastest-growing contractors are doing differently</span>
-    </div>
-    <div class="topic">
-      <div class="topic-icon">💡</div>
-      <span>The biggest untapped acquisition channels most owners are ignoring</span>
+    <div class="stat-item">
+      <div class="stat-number">$155M</div>
+      <div class="stat-label">Estimated HVAC Opportunity</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="book">
-  <div class="cta-box">
-    <h2>Limited to 20 Interviews</h2>
-    <p>We're looking for owners and founders of commercial HVAC, plumbing, and electrical companies in South Florida. If that's you, we'd love to hear your story.</p>
-    <div class="cta-details">
-      <div class="cta-detail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        30 min Zoom
-      </div>
-      <div class="cta-detail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        No sales pitch
-      </div>
-      <div class="cta-detail">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        Free video + report
-      </div>
-    </div>
-    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary">Book Your Interview Slot →</a>
+  <div style="max-width: 600px; margin: 0 auto;">
+    <h2>One Spot Per Service Area</h2>
+    <p style="color: var(--pale); margin: 1rem 0 2rem; font-size: 1.05rem; line-height: 1.6;">
+      We're signing commercial HVAC contractors in Miami-Dade now. See if your territory is available.
+    </p>
+    <a href="https://calendly.com/juanfe-acquisitionlabs/30min" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Check Availability →</a>
+    <p style="color: var(--pale); margin-top: 1.2rem; font-size: 0.85rem;">15-minute call · No obligation · We'll show you your market data</p>
   </div>
 </section>
 
