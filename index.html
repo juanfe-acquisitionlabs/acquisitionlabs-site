@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Acquisition Labs · Email revenue architects for e-commerce</title>
-<meta name="description" content="Email revenue architects for e-commerce brands doing $50K to $1M a month. Deliverability first, then the segments and flows that turn your list into revenue. The Day-90 Promise.">
+<title>Acquisition Labs · Email revenue architects for replenishment brands</title>
+<meta name="description" content="Email and SMS revenue engines for Shopify replenishment brands doing $100K to $500K a month. Deliverability first, flows timed to when customers run out, lift proven with a holdout. Pay once for the build, then only in months revenue beats its baseline.">
 <meta property="og:title" content="Acquisition Labs · Email revenue architects">
-<meta property="og:description" content="Ads cost more every year. Own the customers you already paid for.">
+<meta property="og:description" content="Your customers run out. Make sure they reorder from you, not from an ad.">
 <meta property="og:url" content="https://acquisitionlabs.ai/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141728'/%3E%3Crect x='8' y='14' width='4' height='10' rx='1.5' fill='%234f8ef7'/%3E%3Crect x='14' y='8' width='4' height='16' rx='1.5' fill='%234f8ef7'/%3E%3Crect x='20' y='17' width='4' height='7' rx='1.5' fill='%234f8ef7'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg1);color:var(--ink);font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden}
 a{color:inherit}
+img{max-width:100%;display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 .dots{background-image:radial-gradient(var(--dot) 1px,transparent 1px),radial-gradient(circle at 50% 20%,var(--bg2) 0,var(--bg1) 70%);background-size:22px 22px,auto}
 :focus-visible{outline:3px solid var(--p);outline-offset:3px;border-radius:6px}
@@ -31,26 +32,40 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:12px;paddi
 .btn.sm{font-size:14px;padding:10px 16px}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
 .btn:hover{opacity:.9}
-.hero{padding:10px 0 48px;text-align:center}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:26px 0 12px}
-h1{font-size:36px;line-height:1.08;font-weight:800;margin:0 auto 16px;max-width:18ch;text-wrap:balance}
+.hero{padding:10px 0 44px;text-align:center}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:22px 0 12px}
+h1{font-size:35px;line-height:1.08;font-weight:800;margin:0 auto 16px;max-width:19ch;text-wrap:balance}
 h1 em{font-style:normal;color:var(--p)}
-.lede{font-size:17px;color:var(--mute);max-width:56ch;margin:0 auto 24px}
+.lede{font-size:17px;color:var(--mute);max-width:58ch;margin:0 auto 22px}
 .lede b{color:var(--ink)}
+.offer{max-width:620px;margin:0 auto 22px;background:#fff;border-radius:16px;box-shadow:0 12px 32px rgba(20,23,40,.09);padding:16px 18px;text-align:left;display:flex;gap:14px;align-items:flex-start;border:2px solid var(--ink)}
+.offer .ic{flex:none;width:34px;height:34px;border-radius:50%;background:var(--ok);display:flex;align-items:center;justify-content:center}
+.offer .ic svg{width:18px;height:18px}
+.offer b{display:block;font-size:16px;line-height:1.35}
+.offer span{font-size:14px;color:var(--mute)}
 .ctas{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.strip{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px;margin:34px auto 0;text-align:left}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px;margin:30px auto 0;text-align:left}
 .strip div{background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 8px 24px rgba(20,23,40,.07);font-size:13px;color:var(--mute);line-height:1.4}
 .strip b{display:block;color:var(--ink);font-size:15px}
 .strip .f b{color:var(--ok)}
+.cred{background:var(--ink);color:#fff;padding:30px 0}
+.cred .wrap{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+.cred p{margin:0}
+.cred .big{font-size:21px;font-weight:800;line-height:1.25}
+.cred .big span{color:#8fb0ff}
+.cred .sm2{font-size:14px;color:#b9bfd9}
+.units{display:flex;flex-wrap:wrap;gap:8px}
+.units span{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;white-space:nowrap}
 section{padding:56px 0}
 .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
 h2{font-size:28px;line-height:1.15;font-weight:800;margin:0 0 12px;max-width:24ch;text-wrap:balance}
-.sub{color:var(--mute);max-width:60ch;margin:0 0 26px}
+.sub{color:var(--mute);max-width:62ch;margin:0 0 26px}
 .card{background:#fff;border-radius:18px;box-shadow:0 14px 36px rgba(20,23,40,.08);padding:22px 20px}
 .why{display:grid;grid-template-columns:1fr;gap:12px}
 .why .card{padding:18px}
 .why b{display:block;font-size:16px;margin-bottom:4px}
 .why p{margin:0;font-size:14px;color:var(--mute)}
+.why a{font-size:12px;color:var(--mute)}
 .data{margin-top:14px;display:grid;grid-template-columns:1fr;gap:12px}
 .data .card{display:flex;gap:16px;align-items:center}
 .data .n{font-size:40px;font-weight:800;line-height:1;color:var(--bad);min-width:92px}
@@ -70,6 +85,12 @@ h2{font-size:28px;line-height:1.15;font-weight:800;margin:0 0 12px;max-width:24c
 .chk li{position:relative;background:#fff;border-radius:16px;box-shadow:0 10px 28px rgba(20,23,40,.07);padding:18px 18px 18px 52px;font-size:14px;color:var(--mute)}
 .chk li:before{content:"";position:absolute;left:18px;top:19px;width:22px;height:22px;border-radius:50%;background-size:13px}
 .chk b{display:block;color:var(--ink);font-size:16px;margin-bottom:3px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gal figure{margin:0;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(20,23,40,.10);overflow:hidden}
+.gal .shot{height:300px;overflow:hidden;background:#efe7db}
+.gal img{width:100%;height:auto}
+.gal figcaption{padding:10px 12px 12px;font-size:12px;color:var(--mute);line-height:1.35}
+.gal figcaption b{display:block;color:var(--ink);font-size:13px}
 .tl{list-style:none;padding:0;margin:0}
 .tl li{position:relative;padding:0 0 22px 30px}
 .tl li:before{content:"";position:absolute;left:3px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ink)}
@@ -80,9 +101,10 @@ h2{font-size:28px;line-height:1.15;font-weight:800;margin:0 0 12px;max-width:24c
 .tl .f:before{background:var(--ok);box-shadow:0 0 0 5px rgba(31,157,85,.18)}
 .tl .f .d{color:var(--ok)}.flag{width:19px;height:19px;color:var(--ok)}
 .tl .a:before{background:var(--bg1);border:2px dashed #aeb2c6;width:10px;height:10px}
-.promise{border-left:4px solid var(--ok)}
-.promise b{font-size:18px;display:block;margin-bottom:6px}
-.promise p{margin:0;color:var(--mute);font-size:14px}
+.pay{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+.pay .card b{font-size:18px;display:block;margin-bottom:6px}
+.pay .card p{margin:0;color:var(--mute);font-size:14px}
+.pay .g{border-left:4px solid var(--ok)}
 .two{display:grid;grid-template-columns:1fr;gap:12px}
 .two .card h3{font-size:20px;margin:0 0 8px}
 .two .card p{margin:0 0 14px;color:var(--mute);font-size:15px}
@@ -101,14 +123,19 @@ details p{margin:0 0 16px;color:var(--mute);font-size:15px}
 footer{border-top:1px solid var(--rule);padding:22px 0 30px;font-size:13px;color:var(--mute)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
 @media (min-width:720px){
-  h1{font-size:54px;max-width:21ch}.lede{font-size:19px}
+  h1{font-size:54px;max-width:20ch}.lede{font-size:19px}
   h2{font-size:36px}
   .nav-l{display:flex}
   .strip{grid-template-columns:repeat(4,1fr)}
+  .cred .wrap{grid-template-columns:1.4fr 1fr}
+  .cred .big{font-size:26px}
   .why{grid-template-columns:repeat(3,1fr)}
   .data{grid-template-columns:1fr 1fr}
   .vs{grid-template-columns:1fr 1fr}
   .chk{grid-template-columns:repeat(3,1fr)}
+  .gal{grid-template-columns:repeat(4,1fr)}
+  .gal .shot{height:380px}
+  .pay{grid-template-columns:1fr 1fr}
   .two{grid-template-columns:1fr 1fr}
   .card{padding:28px}
   .tl{display:grid;grid-template-columns:1fr 1.2fr 1.35fr .9fr;gap:0 22px}
@@ -128,14 +155,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 <div class="wrap">
 <nav aria-label="Main">
   <a class="brand" href="#top" aria-label="Acquisition Labs home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#141728"/><rect x="8" y="14" width="4" height="10" rx="1.5" fill="#4f8ef7"/><rect x="14" y="8" width="4" height="16" rx="1.5" fill="#4f8ef7"/><rect x="20" y="17" width="4" height="7" rx="1.5" fill="#4f8ef7"/></svg><span class="wm">Acquisition <span>Labs</span></span></a>
-  <div class="nav-l"><a href="#why">Why now</a><a href="#engine">What we build</a><a href="#offer">The offer</a><a href="#faq">FAQ</a></div>
+  <div class="nav-l"><a href="#why">Why now</a><a href="#engine">What we build</a><a href="#work">Our work</a><a href="#offer">The offer</a><a href="#faq">FAQ</a></div>
   <a class="btn sm" href="https://calendly.com/juanfe-acquisitionlabs/30min">Book a call</a>
 </nav>
 
 <div class="hero" id="top">
-  <p class="eyebrow">Email revenue architects for <span style="white-space:nowrap">e&#8209;commerce</span></p>
-  <h1>Ads cost more every year. <em>Own the customers you already paid&nbsp;for.</em></h1>
-  <p class="lede">Most email agencies sell pretty templates and copy. None of it matters when the email lands in spam. <b>We build the email and SMS revenue engine for e&#8209;commerce brands doing $50K to $1M a month, starting with deliverability.</b></p>
+  <p class="eyebrow">Email revenue architects for <span style="white-space:nowrap">replenishment brands</span></p>
+  <h1>Your customers run out. <em>Make sure they reorder from you, not from an&nbsp;ad.</em></h1>
+  <p class="lede">Ads cost more every year, and most email agencies sell pretty templates that never reach the inbox. <b>We engineer the email and SMS revenue engine for Shopify brands doing $100K to $500K a month: deliverability first, flows timed to when customers run out, and the lift proven with a&nbsp;holdout.</b></p>
+  <div class="offer">
+    <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <div><b>Pay once for the build. After that, you only pay in months your email and SMS revenue beats its&nbsp;baseline.</b><span>And if it isn't up 25% by day 90, we keep working for&nbsp;free.</span></div>
+  </div>
   <div class="ctas">
     <a class="btn" href="https://calendly.com/juanfe-acquisitionlabs/30min">Book a 30-minute call</a>
     <a class="btn ghost" href="#offer">See the offer</a>
@@ -150,26 +181,36 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 </div>
 </header>
 
+<div class="cred" aria-label="Who we are">
+<div class="wrap">
+  <div>
+    <p class="big">Revenue engineers, <span>not template&nbsp;makers.</span></p>
+    <p class="sm2">Our team has worked with five Fortune 500 brands and venture capital firms. We run retention the way they run growth: on unit&nbsp;economics.</p>
+  </div>
+  <div class="units" aria-label="What we measure"><span>LTV</span><span>CAC payback</span><span>Cohort curves</span><span>Incremental revenue</span><span>Inbox placement</span></div>
+</div>
+</div>
+
 <main id="main">
 
 <section id="why">
 <div class="wrap">
   <p class="k">Why now</p>
-  <h2>Email got more valuable. It also got&nbsp;harder.</h2>
-  <p class="sub">Paid traffic is rented. Your list is owned. But the rules for reaching an inbox changed, and most brands never caught&nbsp;up.</p>
+  <h2>Email got more valuable in 2026. It also got a lot&nbsp;harder.</h2>
+  <p class="sub">Paid traffic is rented. Your list is owned. But the rules for reaching an inbox, and for proving what email earns, changed. Most brands and agencies never caught&nbsp;up.</p>
   <div class="why">
-    <div class="card"><b>Ads keep getting pricier</b><p>Every visitor who leaves without giving an email or phone number is one you will pay to reach&nbsp;again.</p></div>
-    <div class="card"><b>Gmail and Yahoo changed the rules</b><p>Brands that email in bulk now need authenticated sending. Without it, campaigns can land in&nbsp;spam.</p></div>
-    <div class="card"><b>Inboxes are full of AI noise</b><p>Generic blasts get ignored. Emails timed to what someone bought get&nbsp;opened.</p></div>
-    <div class="card"><b>Consent rules keep moving</b><p>Email and SMS opt-in has to be set up right, or the list becomes a&nbsp;liability.</p></div>
-    <div class="card"><b>Most lists aren't segmented</b><p>The same email goes to a first-time buyer and a five&#8209;time&nbsp;buyer.</p></div>
-    <div class="card"><b>In-house teams are stretched</b><p>Retention is the job that slips when the launch, the ads and the inventory all need someone&nbsp;today.</p></div>
+    <div class="card"><b>Gmail now rejects, not just filters</b><p>Full enforcement of bulk-sender rules since November 2025. Unauthenticated mail can be refused at the server.</p></div>
+    <div class="card"><b>Outlook joined in</b><p>Since May 2025, Microsoft rejects non-compliant mail from domains sending over 5,000 a day.</p></div>
+    <div class="card"><b>Open rates stopped meaning much</b><p>Apple's Mail Privacy Protection inflates more than half of all opens. Reports built on opens are guessing.</p></div>
+    <div class="card"><b>Attribution isn't proof</b><p>Klaviyo itself says attribution doesn't prove causation. A holdout test does.</p></div>
+    <div class="card"><b>Generic AI costs trust</b><p>Klaviyo's 2026 research: only 13% of consumers fully trust AI. Emails built on your own customer data still&nbsp;earn.</p></div>
+    <div class="card"><b>Every re-buy you miss, you pay for twice</b><p>When a customer runs out and nothing reaches them, the reorder goes to whoever shows up in their feed next.</p></div>
   </div>
   <div class="data">
     <div class="card"><span class="n">75%</span><p><b>had no signup popup.</b> 972 of 1,302 Shopify brands doing $50K+ a month with Klaviyo installed, checked on their&nbsp;homepage.</p></div>
-    <div class="card"><span class="n">14%</span><p><b>had no DMARC record,</b> the security setting Gmail and Yahoo require from bulk senders. 188 of the same 1,302&nbsp;brands.</p></div>
+    <div class="card"><span class="n">14%</span><p><b>had no DMARC record,</b> the security setting Gmail, Yahoo and Outlook require from bulk senders. 188 of the same 1,302&nbsp;brands.</p></div>
   </div>
-  <p class="src">Source: Acquisition Labs scan of US Shopify brands on Klaviyo, September 2026.</p>
+  <p class="src">Sources: <a href="https://redsift.com/blog/gmails-enforcement-ramps-up-what-bulk-senders-need-to-know">Gmail enforcement</a> · <a href="https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/strengthening-email-ecosystem-outlook%e2%80%99s-new-requirements-for-high%e2%80%90volume-senders/4399730">Microsoft</a> · <a href="https://www.litmus.com/apple-mail-privacy-protection-resources">Litmus</a> · <a href="https://www.klaviyo.com/blog/measure-true-marketing-impact">Klaviyo on attribution</a> · <a href="https://www.klaviyo.com/marketing-resources/ai-consumer-trends">Klaviyo AI report</a> · Acquisition Labs scan of US Shopify brands on Klaviyo, September 2026.</p>
 </div>
 </section>
 
@@ -182,33 +223,49 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
     <div class="card them"><h3>What most email agencies sell</h3><ul>
       <li>Templates and copy</li>
       <li>The same newsletter to the whole list</li>
-      <li>Open rates in the monthly report</li>
-      <li>Whatever sending setup was already there</li>
+      <li>One 30-day reminder for every product</li>
+      <li>Open rates and attributed revenue in the report</li>
+      <li>Your account, run in their name</li>
     </ul></div>
-    <div class="card us"><h3>What we build</h3><ul>
+    <div class="card us"><h3>What we engineer</h3><ul>
       <li>Authentication, warmup and inbox placement before the first send</li>
       <li>Segments by purchase cycle, product and engagement</li>
-      <li>Flows timed to when customers run out</li>
-      <li>Revenue against a locked baseline</li>
+      <li>Reorder timing per product, from your own order data</li>
+      <li>Incremental revenue from a holdout, plus LTV and cohorts</li>
+      <li>Everything built in your account. You own all of it</li>
     </ul></div>
   </div>
 
   <h2 style="margin-top:56px">The engine. We do all of this for&nbsp;you.</h2>
   <ul class="chk">
     <li><b>Inbox first</b>SPF, DKIM, DMARC and BIMI on your sending domain, warmed up, and placement checked every&nbsp;month.</li>
-    <li><b>Your own audience</b>A signup popup that asks one question first, then collects email and phone on the first&nbsp;visit.</li>
-    <li><b>Behavior-based flows</b>Welcome to winback, timed to what customers buy and when they run out. Personalized, in your voice, never&nbsp;robotic.</li>
+    <li><b>Your own audience</b>A popup that asks one question first, then collects email and phone, with email and SMS consent captured&nbsp;right.</li>
+    <li><b>Replenishment, timed per product</b>Reorder reminders set to when each product actually runs out, not a generic delay. Personalized, in your voice, never&nbsp;robotic.</li>
     <li><b>Deep segmentation</b>By purchase cycle, product, subscription and engagement. Inactive subscribers suppressed to protect your&nbsp;domain.</li>
-    <li><b>One journey</b>Email, SMS and retargeting fed from the same&nbsp;segments.</li>
-    <li><b>Attribution you can defend</b>Revenue measured against a locked baseline, with a holdout test. Every order email touched, not just last&nbsp;click.</li>
+    <li><b>One journey</b>Email, SMS and retargeting fed from the same segments, from welcome to&nbsp;winback.</li>
+    <li><b>Proof, not attribution</b>A locked baseline and a holdout group, so you see the revenue email created. LTV and cohort curves every&nbsp;month.</li>
   </ul>
 </div>
 </section>
 
-<section id="offer">
+<section id="work">
+<div class="wrap">
+  <p class="k">Our work</p>
+  <h2>Six flows live before the first ad&nbsp;dollar.</h2>
+  <p class="sub">Flora &amp; Fire, a direct-to-consumer rose brand, is launching with its owned channel built first: popup, welcome, abandoned checkout, abandoned cart, browse abandoned and post-purchase. Designed to the brand, written in the founder's&nbsp;voice.</p>
+  <div class="gal">
+    <figure><div class="shot"><img src="work/ff-welcome.jpg" alt="Flora &amp; Fire welcome email: $24 off your first order, with a photo of red roses in a cream vase" width="720" height="1200" loading="lazy"></div><figcaption><b>Welcome, email 1 of 5</b>The offer, then the story</figcaption></figure>
+    <figure><div class="shot"><img src="work/ff-checkout.jpg" alt="Flora &amp; Fire abandoned checkout email: Pick up where you left off, with a progress bar and the product" width="720" height="1200" loading="lazy"></div><figcaption><b>Abandoned checkout</b>Progress bar, saved cart</figcaption></figure>
+    <figure><div class="shot"><img src="work/ff-browse.jpg" alt="Flora &amp; Fire browse abandoned email: The rose you had your eye on" width="720" height="1200" loading="lazy"></div><figcaption><b>Browse abandoned</b>The product they looked at</figcaption></figure>
+    <figure><div class="shot"><img src="work/ff-postpurchase.jpg" alt="Flora &amp; Fire post-purchase email from the founder with two ideas for roses past their peak" width="720" height="945" loading="lazy"></div><figcaption><b>Post-purchase</b>From the founder, timed to the fade</figcaption></figure>
+  </div>
+</div>
+</section>
+
+<section id="offer" class="dots">
 <div class="wrap">
   <p class="k">The offer</p>
-  <h2>Live in 21 days. Guaranteed by day&nbsp;90.</h2>
+  <h2>Live in 21 days. Paid for when it&nbsp;works.</h2>
   <p class="sub">Popup, welcome, abandoned checkout, abandoned cart, browse abandoned, post-purchase and winback. Built in your Klaviyo account. You own all of&nbsp;it.</p>
   <div class="card">
     <ol class="tl">
@@ -218,14 +275,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
       <li class="a"><span class="d" style="color:var(--mute)">After</span><p>Campaigns, tests and new flows as you&nbsp;grow.</p></li>
     </ol>
   </div>
-  <div class="card promise" style="margin-top:12px">
-    <b>The Day&#8209;90&nbsp;Promise</b>
-    <p>We lock your baseline from the 60 days before we start. If Klaviyo-attributed email and SMS revenue isn't 25% above it by day 90, we keep working at no charge until it&nbsp;is.</p>
+  <div class="pay">
+    <div class="card"><b>Pay once, then only when it works</b><p>One fee for the build. After that, a monthly fee charged only in months your email and SMS revenue beats its baseline. A flat month costs you&nbsp;nothing.</p></div>
+    <div class="card g"><b>The Day&#8209;90&nbsp;Promise</b><p>We lock your baseline from a normal 60 days before we start. If Klaviyo-attributed email and SMS revenue isn't 25% above it by day 90, we keep working at no charge until it&nbsp;is.</p></div>
   </div>
 </div>
 </section>
 
-<section class="dots">
+<section>
 <div class="wrap">
   <div class="two">
     <div class="card">
@@ -236,11 +293,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
     </div>
     <div class="card">
       <p class="k">Built for</p>
-      <h3>E&#8209;commerce CEOs doing $50K to $1M a&nbsp;month.</h3>
+      <h3>Founders of replenishment brands doing $100K to $500K a&nbsp;month.</h3>
       <ul class="fit">
+        <li>Products that run out: skincare, supplements, coffee, pet food</li>
         <li>Shopify store with Klaviyo installed</li>
-        <li>Products people buy again: skincare, coffee, supplements, pet, food</li>
-        <li>Subscription and repeat-purchase brands</li>
+        <li>Spending on paid ads, with email under 15% of revenue</li>
         <li>We take two new brands a month</li>
       </ul>
     </div>
@@ -248,20 +305,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="dots">
 <div class="wrap" style="max-width:780px">
   <p class="k">FAQ</p>
-  <h2>Questions CEOs ask on the&nbsp;call.</h2>
-  <details><summary>Do we have to switch email platforms?</summary><p>No. We build inside your Klaviyo account. Everything we build is yours, including if you stop working with us.</p></details>
-  <details><summary>What exactly does the Day-90 Promise measure?</summary><p>Klaviyo-attributed email and SMS revenue, against a baseline we lock from the 60 days before we start. If it isn't up 25% by day 90, we keep working at no charge until it is.</p></details>
-  <details><summary>Why start with deliverability?</summary><p>Because every flow and campaign after it depends on reaching the inbox. Authentication, warmup and placement checks take days, and they protect everything that comes next.</p></details>
-  <details><summary>How long do we commit for?</summary><p>90 days to start. At day 90 we review the numbers against your baseline together, and you decide how to continue.</p></details>
+  <h2>Questions founders ask on the&nbsp;call.</h2>
+  <details><summary>How do you prove the revenue is real?</summary><p>We lock a baseline before we start and keep a holdout group that never gets the new flows. The difference between the two is the revenue email created, not just what Klaviyo credits to it.</p></details>
+  <details><summary>How does "pay only when it works" work?</summary><p>You pay one fee for the build. After that, the monthly fee is charged only in months your email and SMS revenue is above the locked baseline. Numbers depend on your size; we share them on the call.</p></details>
+  <details><summary>What exactly does the Day-90 Promise measure?</summary><p>Klaviyo-attributed email and SMS revenue, against a baseline we lock from a normal 60 days before we start. If it isn't up 25% by day 90, we keep working at no charge until it is.</p></details>
+  <details><summary>Do we have to switch platforms, or give up our account?</summary><p>No. We build inside your Klaviyo account. You keep admin access and own everything we build, including if you stop working with us.</p></details>
+  <details><summary>Why start with deliverability?</summary><p>Gmail, Yahoo and Outlook now reject mail that isn't authenticated properly. Every flow and campaign after that depends on reaching the inbox, so it comes first.</p></details>
   <details><summary>What do you need from us?</summary><p>Access to Shopify and Klaviyo, your brand assets, and one 30-minute kickoff. We handle the rest.</p></details>
-  <details><summary>What does it cost?</summary><p>It is priced by brand size. We share the numbers on the call, after we've looked at your store.</p></details>
 </div>
 </section>
 
-<section class="final dots">
+<section class="final">
 <div class="wrap">
   <h2>Let's see what your email should be bringing&nbsp;in.</h2>
   <p class="sub">30 minutes. We'll show you where your list leaks and what it's worth to fix&nbsp;it.</p>
