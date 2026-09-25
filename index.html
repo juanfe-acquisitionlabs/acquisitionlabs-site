@@ -21,6 +21,7 @@ img{max-width:100%;display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 .dots{background-image:radial-gradient(var(--dot) 1px,transparent 1px),radial-gradient(circle at 50% 20%,var(--bg2) 0,var(--bg1) 70%);background-size:22px 22px,auto}
 :focus-visible{outline:3px solid var(--p);outline-offset:3px;border-radius:6px}
+.urg{background:#141728;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:9px 12px;line-height:1.35}.urg a{color:#fff}.urg .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444;margin-right:7px;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{50%{opacity:.35}}@media (prefers-reduced-motion:reduce){.urg .dot{animation:none}}
 .skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:10}
 nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0}
 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:800;font-size:17px;white-space:nowrap}
@@ -150,6 +151,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="urg" role="note"><span class="dot" aria-hidden="true"></span>Taking 2 new brands for <span class="mo">this month</span></div>
 
 <header class="dots">
 <div class="wrap">
@@ -321,7 +323,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 <section class="final">
 <div class="wrap">
   <h2>Let's see what your email should be bringing&nbsp;in.</h2>
-  <p class="sub">30 minutes. We'll show you where your list leaks and what it's worth to fix&nbsp;it.</p>
+  <p class="sub">30 minutes. We'll show you where your list leaks and what it's worth to fix it. We take on two new brands for <span class="mo">this month</span>, because the founder runs every&nbsp;account.</p>
   <a class="btn" href="https://calendly.com/juanfe-acquisitionlabs/30min">Book a 30-minute call</a>
 </div>
 </section>
@@ -334,5 +336,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
   <a href="mailto:juanfe@acquisitionlabs.ai">juanfe@acquisitionlabs.ai</a>
 </div>
 </footer>
+<script>(function(){var m=["January","February","March","April","May","June","July","August","September","October","November","December"];var e=document.querySelectorAll(".mo");for(var i=0;i<e.length;i++)e[i].textContent=m[(new Date().getMonth()+(new Date().getDate()>=20?1:0))%12];})();</script>
 </body>
 </html>
